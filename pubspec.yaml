@@ -27,3 +27,11 @@ dev_dependencies:
 flutter:
   assets:
     - assets/flags/
+    - assets/images/
+
+
+
+  fonts:
+    - family: Montserrat-SemiBold
+      fonts:
+        - asset: assets/fonts/Montserrat-SemiBold.ttf

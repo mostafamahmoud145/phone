@@ -423,45 +423,6 @@ class _InputWidgetView
             ),
             SizedBox(width: widget.spaceBetweenSelectorAndTextField),
           ],
-          /*Flexible(
-            child: TextFormField(
-              key: widget.fieldKey ?? Key(TestHelper.TextInputKeyValue),
-              textDirection: TextDirection.ltr,
-              controller: state.controller,
-              cursorColor: widget.cursorColor,
-              focusNode: widget.focusNode,
-              enabled: widget.isEnabled,
-              autofocus: widget.autoFocus,
-              keyboardType: widget.keyboardType,
-              textInputAction: widget.keyboardAction,
-              style: widget.textStyle,
-              decoration: state.getInputDecoration(widget.inputDecoration),
-              textAlign: widget.textAlign,
-              textAlignVertical: widget.textAlignVertical,
-              onEditingComplete: widget.onSubmit,
-              onFieldSubmitted: widget.onFieldSubmitted,
-              autovalidateMode: widget.autoValidateMode,
-              autofillHints: widget.autofillHints,
-              validator: widget.validator ?? state.validator,
-              onSaved: state.onSaved,
-              scrollPadding: widget.scrollPadding,
-              inputFormatters: [
-                LengthLimitingTextInputFormatter(widget.maxLength),
-                widget.formatInput
-                    ? AsYouTypeFormatter(
-                  isoCode: countryCode,
-                  dialCode: dialCode,
-                  onInputFormatted: (TextEditingValue value) {
-                    state.controller!.value = value;
-                  },
-                )
-                    : FilteringTextInputFormatter.digitsOnly,
-              ],
-              onChanged: state.onChanged,
-            ),
-          )*/
-
-
 
           Flexible(
             child: Row(
@@ -485,7 +446,8 @@ class _InputWidgetView
                             style: TextStyle(
                               color: AppColors.linear2,
                               fontSize: AppFontsSizeManager.s21_3.sp,
-                              fontWeight: AppFontsWeightManager.semiBold
+                              fontWeight: AppFontsWeightManager.semiBold,
+                              fontFamily: 'Montserrat-SemiBold'
                             ),
                           ),
                         ),
