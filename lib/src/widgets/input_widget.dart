@@ -469,8 +469,8 @@ class _InputWidgetView
               children: [
                 Flexible(
                   child: Container(
-                    height: AppSize.h81.h,
-                    width: AppSize.w448.w,
+                    height: AppSize.h66.h,
+                    width: AppSize.w372.w,
                     padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.6.w),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey3),
