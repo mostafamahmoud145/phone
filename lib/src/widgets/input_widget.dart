@@ -506,11 +506,11 @@ class _InputWidgetView
                             keyboardType: widget.keyboardType,
                             textInputAction: widget.keyboardAction,
                             style: widget.textStyle,
-                            decoration: InputDecoration(
+                            /*decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.only(bottom: 20.h, left: 32.w)
-                            ),
-                            //decoration: state.getInputDecoration(widget.inputDecoration),
+                            ),*/
+                            decoration: state.getInputDecoration(widget.inputDecoration),
                             textAlign: widget.textAlign,
                             textAlignVertical: widget.textAlignVertical,
                             onEditingComplete: widget.onSubmit,
