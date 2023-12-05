@@ -478,12 +478,15 @@ class _InputWidgetView
                     ),
                     child: Row(
                       children: [
-                        Text(
-                          dialCode,
-                          style: TextStyle(
-                            color: AppColors.linear2,
-                            fontSize: AppFontsSizeManager.s21_3.sp,
-                            fontWeight: AppFontsWeightManager.semiBold
+                        Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Text(
+                            dialCode,
+                            style: TextStyle(
+                              color: AppColors.linear2,
+                              fontSize: AppFontsSizeManager.s21_3.sp,
+                              fontWeight: AppFontsWeightManager.semiBold
+                            ),
                           ),
                         ),
                         SizedBox(
