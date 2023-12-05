@@ -428,81 +428,79 @@ class _InputWidgetView
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Flexible(
-                  child: Container(
-                    height: AppSize.h66.h,
-                    width: AppSize.w372.w,
-                    padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.6.w),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.grey3),
-                      borderRadius: BorderRadius.circular(AppRadius.r10_6.r),
-                      color: Colors.transparent
-                    ),
-                    child: Row(
-                      children: [
-                        Directionality(
+                Container(
+                  height: AppSize.h66.h,
+                  width: AppSize.w372.w,
+                  padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.6.w),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.grey3),
+                    borderRadius: BorderRadius.circular(AppRadius.r10_6.r),
+                    color: Colors.transparent
+                  ),
+                  child: Row(
+                    children: [
+                      Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: Text(
+                          dialCode,
+                          style: TextStyle(
+                            color: AppColors.linear2,
+                            fontSize: AppFontsSizeManager.s21_3.sp,
+                            fontWeight: AppFontsWeightManager.semiBold,
+                            fontFamily: 'Montserrat-SemiBold'
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: AppSize.w10_6.w,
+                      ),
+                      Container(
+                        height: AppSize.h40.h,
+                        width: AppSize.w2_6.w,
+                        color: AppColors.grey3,
+                      ),
+                      Flexible(
+                        child: TextFormField(
+                          key: widget.fieldKey ?? Key(TestHelper.TextInputKeyValue),
                           textDirection: TextDirection.ltr,
-                          child: Text(
-                            dialCode,
-                            style: TextStyle(
-                              color: AppColors.linear2,
-                              fontSize: AppFontsSizeManager.s21_3.sp,
-                              fontWeight: AppFontsWeightManager.semiBold,
-                              fontFamily: 'Montserrat-SemiBold'
-                            ),
-                          ),
+                          controller: state.controller,
+                          cursorColor: widget.cursorColor,
+                          focusNode: widget.focusNode,
+                          enabled: widget.isEnabled,
+                          autofocus: widget.autoFocus,
+                          keyboardType: widget.keyboardType,
+                          textInputAction: widget.keyboardAction,
+                          style: widget.textStyle,
+                          /*decoration: InputDecoration(
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(bottom: 20.h, left: 32.w)
+                          ),*/
+                          decoration: state.getInputDecoration(widget.inputDecoration),
+                          textAlign: widget.textAlign,
+                          textAlignVertical: widget.textAlignVertical,
+                          onEditingComplete: widget.onSubmit,
+                          onFieldSubmitted: widget.onFieldSubmitted,
+                          autovalidateMode: widget.autoValidateMode,
+                          autofillHints: widget.autofillHints,
+                          validator: widget.validator ?? state.validator,
+                          onSaved: state.onSaved,
+                          scrollPadding: widget.scrollPadding,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(widget.maxLength),
+                            widget.formatInput
+                                ? AsYouTypeFormatter(
+                              isoCode: countryCode,
+                              dialCode: dialCode,
+                              onInputFormatted: (TextEditingValue value) {
+                                state.controller!.value = value;
+                              },
+                            )
+                                : FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          onChanged: state.onChanged,
                         ),
-                        SizedBox(
-                          width: AppSize.w10_6.w,
-                        ),
-                        Container(
-                          height: AppSize.h40.h,
-                          width: AppSize.w2_6.w,
-                          color: AppColors.grey3,
-                        ),
-                        Flexible(
-                          child: TextFormField(
-                            key: widget.fieldKey ?? Key(TestHelper.TextInputKeyValue),
-                            textDirection: TextDirection.ltr,
-                            controller: state.controller,
-                            cursorColor: widget.cursorColor,
-                            focusNode: widget.focusNode,
-                            enabled: widget.isEnabled,
-                            autofocus: widget.autoFocus,
-                            keyboardType: widget.keyboardType,
-                            textInputAction: widget.keyboardAction,
-                            style: widget.textStyle,
-                            /*decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.only(bottom: 20.h, left: 32.w)
-                            ),*/
-                            decoration: state.getInputDecoration(widget.inputDecoration),
-                            textAlign: widget.textAlign,
-                            textAlignVertical: widget.textAlignVertical,
-                            onEditingComplete: widget.onSubmit,
-                            onFieldSubmitted: widget.onFieldSubmitted,
-                            autovalidateMode: widget.autoValidateMode,
-                            autofillHints: widget.autofillHints,
-                            validator: widget.validator ?? state.validator,
-                            onSaved: state.onSaved,
-                            scrollPadding: widget.scrollPadding,
-                            inputFormatters: [
-                              LengthLimitingTextInputFormatter(widget.maxLength),
-                              widget.formatInput
-                                  ? AsYouTypeFormatter(
-                                isoCode: countryCode,
-                                dialCode: dialCode,
-                                onInputFormatted: (TextEditingValue value) {
-                                  state.controller!.value = value;
-                                },
-                              )
-                                  : FilteringTextInputFormatter.digitsOnly,
-                            ],
-                            onChanged: state.onChanged,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
 
