@@ -35,7 +35,7 @@ class Item extends StatelessWidget {
     }
     return Container(
       height: AppSize.h66_6.h,
-      width: 118.6.w,
+      //width: 118.6.w,
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.grey3),
           borderRadius: BorderRadius.circular(AppRadius.r10_6.r)
@@ -77,7 +77,7 @@ class _Flag extends StatelessWidget {
     print(country!.flagUri);
     return country != null && showFlag!
         ? Container(
-          width: 115.6.w,
+          width: 115.w,
             child: useEmoji!
                 ? Text(
                     Utils.generateFlagEmojiUnicode(country?.alpha2Code ?? ''),

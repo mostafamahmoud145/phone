@@ -435,7 +435,8 @@ class _InputWidgetView
                     padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.6.w),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey3),
-                      borderRadius: BorderRadius.circular(AppRadius.r10_6.r)
+                      borderRadius: BorderRadius.circular(AppRadius.r10_6.r),
+                      color: Colors.transparent
                     ),
                     child: Row(
                       children: [
