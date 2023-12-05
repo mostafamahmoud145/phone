@@ -469,7 +469,9 @@ class _InputWidgetView
               children: [
                 Flexible(
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                    height: AppSize.h81.h,
+                    width: AppSize.w448.w,
+                    padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.6.w),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey3),
                       borderRadius: BorderRadius.circular(AppRadius.r10_6.r)
@@ -488,7 +490,7 @@ class _InputWidgetView
                           width: AppSize.w10_6.w,
                         ),
                         Container(
-                          height: AppSize.h66_6.h,
+                          height: AppSize.h40.h,
                           width: AppSize.w2_6.w,
                           color: AppColors.grey3,
                         ),
@@ -504,7 +506,11 @@ class _InputWidgetView
                             keyboardType: widget.keyboardType,
                             textInputAction: widget.keyboardAction,
                             style: widget.textStyle,
-                            decoration: state.getInputDecoration(widget.inputDecoration),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              contentPadding: EdgeInsets.only(bottom: 20.h, left: 32.w)
+                            ),
+                            //decoration: state.getInputDecoration(widget.inputDecoration),
                             textAlign: widget.textAlign,
                             textAlignVertical: widget.textAlignVertical,
                             onEditingComplete: widget.onSubmit,
