@@ -432,7 +432,7 @@ class _InputWidgetView
                   child: Container(
                     //height: AppSize.h66.h,
                     width: AppSize.w372.w,
-                    padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.6.w),
+                    padding: EdgeInsets.symmetric(/*vertical: 10.h,*/ horizontal: 26.6.w),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.grey3),
                       borderRadius: BorderRadius.circular(AppRadius.r10_6.r),
@@ -473,7 +473,7 @@ class _InputWidgetView
                             style: widget.textStyle,
                             /*decoration: InputDecoration(
                               border: InputBorder.none,
-                              contentPadding: EdgeInsets.only(bottom: 20.h, left: 60.w)
+                              contentPadding: EdgeInsets.only(bottom: 20.h, left: 120.w)
                             ),*/
                             decoration: state.getInputDecoration(widget.inputDecoration),
                             textAlign: widget.textAlign,
