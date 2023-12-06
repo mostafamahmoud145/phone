@@ -34,8 +34,8 @@ class Item extends StatelessWidget {
       dialCode = dialCode.padRight(5, "   ");
     }
     return Container(
-      height: AppSize.h66_6.h,
-      //width: 118.6.w,
+      height: 75.h,
+      width: 118.6.w,
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.grey3),
           borderRadius: BorderRadius.circular(AppRadius.r10_6.r)
@@ -76,41 +76,43 @@ class _Flag extends StatelessWidget {
   Widget build(BuildContext context) {
     print(country!.flagUri);
     return country != null && showFlag!
-        ? Container(
-          width: 115.w,
-            child: useEmoji!
-                ? Text(
-                    Utils.generateFlagEmojiUnicode(country?.alpha2Code ?? ''),
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  )
-                : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      child: ClipOval(
-                        child: Image.asset(
-                          country!.flagUri,
-                          height: 45.3.h,
-                          width: 45.3.w,
-                          fit: BoxFit.fill,
-                          package: 'intl_phone_number_input',
-                          errorBuilder: (context, error, stackTrace) {
-                            return SizedBox.shrink();
-                            },
-                          ),
+        ? Flexible(
+          child: Container(
+            width: 115.w,
+              child: useEmoji!
+                  ? Text(
+                      Utils.generateFlagEmojiUnicode(country?.alpha2Code ?? ''),
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    )
+                  : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        child: ClipOval(
+                          child: Image.asset(
+                            country!.flagUri,
+                            height: 45.3.h,
+                            width: 45.3.w,
+                            fit: BoxFit.fill,
+                            package: 'intl_phone_number_input',
+                            errorBuilder: (context, error, stackTrace) {
+                              return SizedBox.shrink();
+                              },
+                            ),
+                        ),
                       ),
-                    ),
-                    /*SizedBox(
-                      width: 21.3.w,
-                    ),*/
-                    Image.asset(
-                      'assets/images/bottom.png',
-                      package: 'intl_phone_number_input',
-                    ),
-                  ],
-                ),
-          )
+                      /*SizedBox(
+                        width: 21.3.w,
+                      ),*/
+                      Image.asset(
+                        'assets/images/bottom.png',
+                        package: 'intl_phone_number_input',
+                      ),
+                    ],
+                  ),
+            ),
+        )
         : SizedBox.shrink();
   }
 }
